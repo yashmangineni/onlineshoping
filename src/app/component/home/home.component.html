@@ -1,0 +1,57 @@
+<div
+  class="page-container"
+  [ngStyle]="{
+    'background-image': 'url(/assets/images/yash.jpeg)',
+    'height': '100vh',
+    'background-size': 'cover',
+    'background-position': 'center',
+    'background-repeat': 'no-repeat',
+    'display': 'flex',
+    'flex-direction': 'column',
+    'justify-content': 'center',
+    'align-items': 'center'
+  }"
+>
+  <!-- Overlay for better text visibility -->
+  <div
+    class="overlay"
+    style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    "
+  ></div>
+
+  <div
+    class="content text-center"
+    style="z-index: 1; color: white; position: relative;"
+  >
+    <h1>Welcome to Our Website</h1>
+    <p>Experience the best services tailored for you.</p>
+
+    <div class="mt-4">
+      <!-- Login Button -->
+      <button
+        class="btn btn-primary btn-lg mr-3"
+        (click)="navigateToLogin()"
+        style="padding: 10px 30px; font-size: 18px;"
+      >
+        Login
+      </button>
+
+      <!-- Signup Button -->
+      <button
+        class="btn btn-success btn-lg"
+        (click)="navigateToSignup()"
+        style="padding: 10px 30px; font-size: 18px;"
+      >
+        Signup
+      </button>
+    </div>
+  </div>
+</div>
+

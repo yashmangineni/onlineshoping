@@ -1,0 +1,97 @@
+/* Page Layout */
+.page-layout {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Heading with Blue Color */
+.page-layout h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color:blue; /* Blue color */
+}
+
+/* Search Bar */
+.search-bar {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Logout Button */
+.logout-btn {
+  font-size: 1rem;
+  padding: 0.6rem;
+  border-radius: 5px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Go to Cart Button */
+.btn-primary {
+  font-size: 1rem;
+  padding: 0.6rem;
+  background-color: #3498db; /* Blue color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+/* Item Cards */
+.item-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Item Image */
+.item-img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Center Text for Loading/No Items */
+.text-center p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+/* Grid Layout for Items */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.col-md-4 {
+  flex: 1 1 30%;
+}
+
+/* Card Body */
+.card-body {
+  padding: 1rem;
+}
+
+/* Item Button */
+.card-body .btn {
+  margin-top: 10px;
+}

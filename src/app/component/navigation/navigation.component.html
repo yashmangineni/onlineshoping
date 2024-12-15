@@ -1,0 +1,84 @@
+<div class="page-layout">
+    <!-- Upper Portion -->
+    <div class="container-fluid py-3">
+      <div class="row justify-content-between align-items-center">
+        <!-- Main Heading -->
+        <div class="col-md-2 col-12 text-start">
+          <h1>Shopping<img [src]="url" style="max-width: 150%; height: auto; width: 150px;"></h1>
+        </div>
+        
+        <!-- Search Bar (Aligned with Account and Cart) -->
+        <div class="col-md-6 col-sm-6 col-12 d-flex justify-content-start">
+          <input
+            type="text"
+            class="form-control search-bar"
+            placeholder="Search..."
+            [(ngModel)]="searchQuery"
+            (input)="searchItems()" 
+          />
+        </div>
+        
+        <!-- Welcome Message and Dropdown/Cart Buttons -->
+        <div class="col-md-4 col-sm-6 d-flex justify-content-end align-items-center">
+          <!-- Welcome Message -->
+          
+  
+          <!-- Dropdown Menu -->
+          <div class="dropdown me-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="me-3">
+            <h5>{{ username }}</h5>
+          </div>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" (click)="goToProfile()">My Profile</a></li>
+              <li><a class="dropdown-item" (click)="goToOrders()">Orders</a></li>
+              <li><a class="dropdown-item" (click)="goToCoupons()">Coupons</a></li>
+              <li><a class="dropdown-item" (click)="goToNotifications()">Notifications</a></li>
+              <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+            </ul>
+          </div>
+          
+          <!-- Go to Cart Button -->
+          <button class="btn btn-primary" (click)="goToCart()">Cart</button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Items Section -->
+    <div class="container-fluid mt-4">
+      <!-- Show a loading message while items are being fetched -->
+      <div *ngIf="isLoading" class="text-center">
+        <p>Loading items...</p>
+      </div>
+  
+      <!-- Display items in a grid layout -->
+      <div *ngIf="!isLoading && filteredItems?.length > 0" class="row">
+        <div class="col-md-4 col-sm-6 col-12" *ngFor="let item of filteredItems">
+          <div class="card mb-4 shadow-sm">
+            <!-- Item Image -->
+            <img
+              [src]="item.url"
+              class="card-img-top"
+              alt="{{ item.name }}"
+              style="width: 100%; height: 200px; object-fit: contain;"
+            />
+            
+            <!-- Item Details -->
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ item.name }}</h5>
+              <p class="card-text">Price: ₹{{ item.price }}</p>
+              <!-- Add to Cart Button -->
+              <button class="btn btn-primary w-100" (click)="addToCart(item)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Show a message if no items are available -->
+      <div *ngIf="!isLoading && filteredItems.length === 0" class="text-center">
+        <p>No items found matching your search.</p>
+      </div>
+    </div>
+  </div>
+  

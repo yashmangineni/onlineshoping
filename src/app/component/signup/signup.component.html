@@ -1,0 +1,37 @@
+<div class="page-container" [ngStyle]="{
+  'background-image': 'url(/assets/images/signup.jpg)',
+  'height': '100vh',
+  'background-size': 'cover',
+  'background-position': 'center',
+  'background-repeat': 'no-repeat'
+}">
+
+<!-- Flexbox container to center content -->
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="container">
+    <!-- Left Section: Form -->
+    <div class="signup">
+      <form *ngIf="formVisible" [formGroup]="registration" (ngSubmit)="data()" class="form-content">
+        <h3 [style.color]="'red'">Create an account</h3>
+        <div class="form-control-lg">
+          <input type="text" class="form-control" formControlName="email" placeholder=".....@gmail.com">
+        </div>
+        <div class="form-control-lg">
+          <input type="text" class="form-control" formControlName="password" placeholder="enter a password">
+          <div *ngIf="successMessage" style="margin-top: 20px; color: green;">
+            <p>{{ successMessage }}</p>
+          </div>
+        </div>
+
+        <!-- Signup button placed at the bottom -->
+        <button class="btn btn-danger">Submit</button>
+      </form>
+
+      <!-- Signup link below the form -->
+      <div class="signup-link">
+        <p>Already have an account? <a routerLink="/login">Login</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

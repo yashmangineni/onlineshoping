@@ -1,0 +1,39 @@
+.notifications {
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .notification {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  
+  .notification h4,
+  .notification h5 {
+    margin: 0;
+  }
+  
+  .notification.warning {
+    background-color: #ffcc00; /* Yellow background */
+    border-left: 5px solid #ffa500; /* Orange border */
+  }
+  
+  .notification.success {
+    background-color: #4caf50; /* Green background */
+    border-left: 5px solid #2e7d32; /* Dark green border */
+  }
+  
+  .notification.error {
+    background-color: #f44336; /* Red background */
+    border-left: 5px solid #b71c1c; /* Dark red border */
+  }
+  
+  .notification.info {
+    background-color: #2196f3; /* Blue background */
+    border-left: 5px solid #0d47a1; /* Dark blue border */
+  }
+  

@@ -1,0 +1,39 @@
+<div class="container mt-4">
+    <h2>Cart</h2>
+  
+    <!-- Display the cart items -->
+    <div *ngIf="cartItems.length > 0" class="row">
+      <div class="col-md-4" *ngFor="let item of cartItems; let i = index">
+        <div class="card mb-4 shadow-sm">
+          <img
+            [src]="item.url"
+            class="card-img-top"
+            alt="{{ item.name }}"
+            style="height: 200px; object-fit: cover;"
+          />
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text">Price: ₹{{ item.price }}</p>
+            <!-- Delete button to remove the item -->
+            <button (click)="deleteItem(i)" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- If the cart is empty -->
+    <div *ngIf="cartItems.length === 0" class="text-center">
+      <p>Your cart is empty!</p>
+    </div>
+  
+    <!-- Display Total Price -->
+    <div *ngIf="cartItems.length > 0" class="total-price text-center mt-4">
+      <h3>Total Price: ₹{{ totalPrice }}</h3>
+    </div>
+  
+    <!-- Pay Button -->
+    <div *ngIf="cartItems.length > 0" class="text-center mt-4">
+      <button (click)="pay()" class="btn btn-success">Proceed to Pay</button>
+    </div>
+  </div>
+  
